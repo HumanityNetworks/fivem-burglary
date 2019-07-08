@@ -7,11 +7,11 @@ CreateThread(function()
 		local door = doors[lastDoor].coords
 		
 		-- if time is up
-		if TimeToSeconds(GetClockTime()) > TimeToSeconds(5, 30, 0) and onMission then
+		if TimeToSeconds(GetClockTime()) > TimeToSeconds(8, 00, 0) and onMission then
 			-- if still in the house
 			if GetCurrentHouse() then
 				-- mission failed we'll get em next time
-				ShowMPMessage("~r~Burglary failed", "You didn't leave the house before daylight.", 3500)
+				ShowMPMessage("~r~Burglary failed", "You didn't leave the house before 8pm.", 3500)
 				TriggerServerEvent("burglary:ended", true, true, lastDoor, GetStreet(door.x, door.y, door.z))
 			else
 				-- player made it before time
