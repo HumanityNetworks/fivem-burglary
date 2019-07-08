@@ -39,7 +39,7 @@ CreateThread(function()
 				local time = TimeToSeconds(GetClockTime())
 				
 				-- check time
-				if time >= 0 and time <= TimeToSeconds(5, 30, 0) then
+				if time >= 0 and time <= TimeToSeconds(8, 00, 0) then
 					onMission = true
 					
 					-- spawn blips
@@ -62,7 +62,7 @@ CreateThread(function()
 					ShowMPMessage("Burglary", "Find a ~r~house ~s~to rob.", 3500)
 					--ShowSubtitle("Find a ~r~house ~s~ to rob")
 				else
-					DisplayHelpText("Burglary missions can only be started from 0:00 - 5:30 AM.")
+					DisplayHelpText("Burglary missions can only be started from 0:00 - 8:00 AM.")
 				end
 			end
 		end
@@ -77,7 +77,7 @@ CreateThread(function()
 		if onMission then
 			-- maths to calculate time until daylight
 			local hours, minutes, seconds = GetClockTime()
-			local left = TimeToSeconds(5, 30, 0) - TimeToSeconds(hours, minutes, seconds)
+			local left = TimeToSeconds(8, 00, 0) - TimeToSeconds(hours, minutes, seconds)
 			local time = SecondsToTime(left)
 			
 			-- draw info
